@@ -1,0 +1,8 @@
+INDEX VERSION 1.134+D:\sist0615\sistSemiProject\.metadata\.plugins\org.eclipse.jdt.core
+3618214272.index
+1865797976.index
+529269161.index
+550727829.index
+3413725848.index
+2239431386.index
+2237983726.index
