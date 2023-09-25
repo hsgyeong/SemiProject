@@ -164,6 +164,28 @@ main
 └── test
 </div>
 ```
+## 시연영상
+
+### 메인페이지(박병주)
+https://github.com/RheeMingyu/SemiSemi/assets/108057548/684d8137-4547-441e-bf5f-1d170213031a
+
+### 추천코스(임형준)
+https://github.com/RheeMingyu/SemiSemi/assets/108057548/639ad984-26dc-4c46-a34a-9cf77ff57795
+
+### 나만의 코스(위시온)
+https://github.com/RheeMingyu/SemiSemi/assets/108057548/16e394e0-c38f-4c31-86c2-72c661883364
+
+### 리뷰페이지(홍성경)
+https://github.com/RheeMingyu/SemiSemi/assets/108057548/96829d61-7d89-4385-872b-9e180e2ea26e
+
+### 마이페이지(진현규)
+https://github.com/RheeMingyu/SemiSemi/assets/108057548/d436f5da-c646-4efc-b18e-3b42c8e40aaa
+
+
+https://github.com/RheeMingyu/SemiSemi/assets/108057548/c912607c-576f-4856-8416-21824e026c50
+
+### 검색(이민규)
+https://github.com/RheeMingyu/SemiSemi/assets/108057548/a719286f-bc48-4e60-b4c5-ca2f29110108
 
 
 
