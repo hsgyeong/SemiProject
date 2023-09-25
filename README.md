@@ -4,6 +4,8 @@
 
 ## 1) 프로젝트 소개
 <b>
+![image](https://github.com/RheeMingyu/sistSemiProject/assets/108057548/89884a29-8c66-4f05-a648-d88119ab28b4)
+  
 환영합니다!❗ 제주도 여행을 성공적으로 계획하고 즐기고자 하는 여러분들을 위한 웹 프로젝트를 기획해 보았습니다. 💑
 
 1️⃣ 제주도는 역사가 깊으며 아름다운 자연 풍경과 독특한 문화로 유명한 대한민국의 보석 같은 섬입니다. 하지만 제주도 여행은 잘 계획되고 준비되어야만 즐거움을 누릴 수 있습니다. 이를 도와주기 위해 우리 프로젝트를 이용해보는건 어떠신가요?
@@ -20,6 +22,10 @@
 
 ## 2) 팀 소개
 
+### 개발환경
+![image](https://github.com/RheeMingyu/sistSemiProject/assets/108057548/bb9bf4f0-778d-43b8-b248-9ca5d616b9b6)
+
+
 ### 팀 멤버
 
 - 팀장 : 이민규 (@RheeMingyu)
@@ -31,6 +37,8 @@
 
 
 ### 역할 분담
+
+![image](https://github.com/RheeMingyu/sistSemiProject/assets/108057548/f0e7846b-1167-4b5f-9fe5-806173033b7f)
 
 - 이민규 : 프로젝트 총괄, 백엔드 개발
   - 검색 기능 
