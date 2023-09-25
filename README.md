@@ -24,8 +24,7 @@
 
 
 ## 2) 팀 소개
-
-![image](https://github.com/RheeMingyu/sistSemiProject/assets/108057548/bb9bf4f0-778d-43b8-b248-9ca5d616b9b6)
+<img width="90%" src="https://github.com/RheeMingyu/sistSemiProject/assets/108057548/bb9bf4f0-778d-43b8-b248-9ca5d616b9b6"/>
 
 
 ### 팀 멤버
@@ -76,19 +75,24 @@
 ## DB설계 
 
 ### 요구사항정의서
-![요구사항](https://github.com/RheeMingyu/sistSemiProject/assets/108057548/0482df63-2a86-4536-a67d-7f0aa6b7650f)
+<img width="90%" src="https://github.com/RheeMingyu/sistSemiProject/assets/108057548/0482df63-2a86-4536-a67d-7f0aa6b7650f"/>
+
 
 ### Contents List
-![컨텐츠 리스트](https://github.com/RheeMingyu/sistSemiProject/assets/108057548/2dfba6ac-2053-4330-a95f-5868bec45f48)
+<img width="90%" src="https://github.com/RheeMingyu/sistSemiProject/assets/108057548/2dfba6ac-2053-4330-a95f-5868bec45f48"/>
+
  
 ### Usecase diagram
-![usecase](https://github.com/RheeMingyu/sistSemiProject/assets/108057548/31b1191c-2bd0-4347-846b-43c1af7e3e2f)
+<img width="90%" src="https://github.com/RheeMingyu/sistSemiProject/assets/108057548/31b1191c-2bd0-4347-846b-43c1af7e3e2f"/>
+
 
 ### Class diagram
-![클래스](https://github.com/RheeMingyu/sistSemiProject/assets/108057548/500d96c9-58b8-4eae-b12c-5bc61b19c5f7)
+<img width="90%" src="https://github.com/RheeMingyu/sistSemiProject/assets/108057548/500d96c9-58b8-4eae-b12c-5bc61b19c5f7"/>
+
 
 ### ERD
-![ERD](https://github.com/RheeMingyu/sistSemiProject/assets/108057548/a245cf38-9543-4e1c-9e18-2087792aa7f0)
+<img width="90%" src="https://github.com/RheeMingyu/sistSemiProject/assets/108057548/a245cf38-9543-4e1c-9e18-2087792aa7f0"/>
+
 
 
  ## 프로젝트 진행
@@ -126,31 +130,35 @@
 🗂️ Directory Path
 ```
 <div>
+main 
 ├── java
-│   └── com
-│       └── ***
-│           └── ***
-│               ├── ***
-│               │   ├── ***
-│               │   ├── ***
-│               │   └── ***
-│               ├── config
-│               │   ├── ***
-│               │   ├── ***
-│               │   │   ├── ***
-│               │   │   └── ***
-│               │   └── ***
-│               ├── ***
-│               ├── ***
-│               │   └── ***
-│               ├── ***
-│               │   └── ***
-│               ├── ***
-│               └── ***
+│   └── data
+│   └── mysql
+│           
+│
+│
+│
+│
+│
 │
 │── webapp
-│    └── main
-│         └──***
+│    └── about
+│    └── admin
+│    └── audio
+│    └── event
+│    └── jeju
+│    └── layout
+│    └── login
+│    └── member
+│    └── META-INF
+│    └── myCourse
+│    └── myList
+│    └── myPage
+│    └── recomCourse
+│    └── search
+│    └── tourReview
+│    └── WEB-INF
+│ ---------index.jsp
 │
 └── test
 </div>
