@@ -31,7 +31,7 @@
 
 - 팀장 : 이민규 (@RheeMingyu)
 - 팀원 : 임형준 (@Limchard)
-- 팀원 : 진현규 (@hyeonqz)
+- 팀원 : 진현규 (@Hyeonqz)
 - 팀원 : 위시온 (@wwishh)
 - 팀원 : 박병주 (@Joseph-PBJ)
 - 팀원 : 홍성경 (@hsg)<br><br>
