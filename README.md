@@ -34,7 +34,7 @@
 - 팀원 : 진현규 (@Hyeonqz)
 - 팀원 : 위시온 (@wwishh)
 - 팀원 : 박병주 (@Joseph-PBJ)
-- 팀원 : 홍성경 (@hsg)<br><br>
+- 팀원 : 홍성경 (@hsgyeong)<br><br>
 
 
 ### 역할 분담
