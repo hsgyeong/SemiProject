@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ImportExportAction">
+		<item key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID" value="org.eclipse.ui.wizards.export.ZipFile"/>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+	</section>
+	<section name="ZipFileExportWizard">
+		<item key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="true"/>
+		<item key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID" value="true"/>
+		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\mysev\Desktop\sistSemiProject0921fin.zip"/>
+			<item value="C:\Users\mysev\Desktop\starscore.zip"/>
+			<item value="C:\Users\mysev\Desktop\searchDao.zip"/>
+			<item value="C:\Users\mysev\Desktop\searchPage.zip"/>
+			<item value="C:\Users\mysev\Desktop\123.zip"/>
+			<item value="C:\Users\mysev\Desktop\bj.zip"/>
+			<item value="C:\Users\mysev\Desktop\1차총백업(0911).zip"/>
+			<item value="C:\Users\mysev\Desktop\백업용1.zip"/>
+			<item value="C:\Users\mysev\Desktop\병주카톡머지2.zip"/>
+			<item value="C:\Users\mysev\Desktop\병주카톡머지1.zip"/>
+			<item value="C:\Users\mysev\Desktop\병주2.zip"/>
+			<item value="C:\Users\mysev\Desktop\병주.zip"/>
+			<item value="C:\Users\mysev\Desktop\요정드림.zip"/>
+		</list>
+	</section>
+</section>

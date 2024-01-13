@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<SAVED_DATA>
+	<bookmarks>
+		<jdbcDriver className="org.apache.derby.jdbc.EmbeddedDriver" name="org.apache.derby.jdbc.EmbeddedDriver" type="DERBY" version="">
+			<jar fileName="C:/Users/mysev/.p2/pool/plugins/com.quantum.derby_3.3.10/lib/derby.jar" />
+		</jdbcDriver>
+		<jdbcDriver className="com.mysql.cj.jdbc.Driver" name="MySQL Connector/J" type="MYSQL" version="mysql-connector-j-8.1.0 (Revision: 7b6f9a337afe6ccb41823df485bf848ca7952b09)">
+			<jar fileName="D:\sist0615\util\mysql-connector-j-8.1.0.jar" />
+		</jdbcDriver>
+		<bookmark>
+			<name>(Internal) Derby</name>
+			<username>QUANTUM</username>
+			<password />
+			<prompt>false</prompt>
+			<connect>jdbc:derby:C:/Users/mysev/.p2/pool/plugins/com.quantum.derby_3.3.10/data/quantum</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>true</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>org.apache.derby.jdbc.EmbeddedDriver</driver>
+			<type>DERBY</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:/Users/mysev/.p2/pool/plugins/com.quantum.derby_3.3.10/lib/derby.jar</driverLocation>
+			<Other_Schemas schemaRule="useAll" />
+			<quickList />
+			<queryList />
+		</bookmark>
+		<bookmark>
+			<name>semi</name>
+			<username>admin2</username>
+			<password>inkel357011</password>
+			<prompt>false</prompt>
+			<connect>jdbc:mysql://semi.ctenjxtdwkfn.ap-northeast-2.rds.amazonaws.com:3306/semi?serverTimezone=Asia/Seoul</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>com.mysql.cj.jdbc.Driver</driver>
+			<type>MYSQL</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>D:\sist0615\util\mysql-connector-j-8.1.0.jar</driverLocation>
+			<Other_Schemas schemaRule="useSelected">
+				<schema>semi</schema>
+			</Other_Schemas>
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>SELECT DEFAULT_COLLATION_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = 'semi'</queryString>
+				</query>
+				<query>
+					<queryString>SELECT DEFAULT_CHARACTER_SET_NAME, DEFAULT_COLLATION_NAME
+FROM INFORMATION_SCHEMA.SCHEMATA
+WHERE SCHEMA_NAME = 'semi'</queryString>
+				</query>
+				<query>
+					<queryString>SELECT TABLE_NAME, TABLE_COLLATION
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA = 'semi'
+AND TABLE_NAME = 'TourSpot'</queryString>
+				</query>
+				<query>
+					<queryString>SELECT TABLE_NAME, TABLE_COLLATION
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA = 'semi'
+AND TABLE_NAME = 'GuestComment'</queryString>
+				</query>
+				<query>
+					<queryString>SELECT TABLE_NAME, TABLE_COLLATION
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA = 'semi'
+AND TABLE_NAME = 'GuestReviewt'</queryString>
+				</query>
+				<query>
+					<queryString>SELECT TABLE_NAME, TABLE_COLLATION
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA = 'semi'
+AND TABLE_NAME = 'GuestReview'</queryString>
+				</query>
+				<query>
+					<queryString>SELECT TABLE_NAME, TABLE_COLLATION
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA = 'semi'
+AND TABLE_NAME = 'Statistics'</queryString>
+				</query>
+				<query>
+					<queryString>SELECT COLUMN_NAME, COLLATION_NAME
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_SCHEMA = 'semi'
+AND TABLE_NAME = 'TourSpot'</queryString>
+				</query>
+				<query>
+					<queryString>SELECT * 
+FROM INFORMATION_SCHEMA.STATISTICS 
+WHERE TABLE_SCHEMA = 'semi' 
+  AND TABLE_NAME = 'MyCourse' 
+  AND INDEX_NAME = 'FULLTEXT'</queryString>
+				</query>
+				<query>
+					<queryString>SELECT * 
+FROM INFORMATION_SCHEMA.Statistics
+WHERE TABLE_SCHEMA = 'semi' 
+  AND TABLE_NAME = 'MyCourse' 
+  AND INDEX_NAME = 'FULLTEXT'</queryString>
+				</query>
+				<query>
+					<queryString>select t.* from MyCourse t JOIN Statistics s ON t.tour_seq=s.tour_seq where MATCH(t.id,t.name,t.intro,t.mainphoto) AGAINST('수심' IN BOOLEAN MODE) limit 0,9</queryString>
+				</query>
+				<query>
+					<queryString>select t.* from MyCourse t JOIN Statistics s ON t.tour_seq=s.tour_seq where MATCH(t.id,t.name,t.intro,t.mainphoto) AGAINST('수심*' IN BOOLEAN MODE) limit 0,9</queryString>
+				</query>
+				<query>
+					<queryString>select t.* from MyCourse t JOIN Statistics s ON t.tour_seq=s.tour_seq where MATCH(t.id,t.name,t.intro,t.mainphoto) AGAINST('면적*' IN BOOLEAN MODE) limit 0,9</queryString>
+				</query>
+				<query>
+					<queryString>select t.* from MyCourse t JOIN Statistics s ON t.tour_seq=s.tour_seq where MATCH(t.id,t.name,t.intro,t.mainphoto) AGAINST('면적*' IN BOOLEAN MODE)</queryString>
+				</query>
+				<query>
+					<queryString>ALTER TABLE TourSpot
+ADD FULLTEXT INDEX fulltext_index_fti (name, hp, addr, photo, intro, area, theme, main_cat, sub_cat, note)</queryString>
+				</query>
+				<query>
+					<queryString>SELECT * 
+FROM INFORMATION_SCHEMA.Statistics
+WHERE TABLE_SCHEMA = 'semi' 
+  AND TABLE_NAME = 'TourSpot' 
+  AND INDEX_NAME = 'FULLTEXT'</queryString>
+				</query>
+				<query>
+					<queryString>SELECT * 
+FROM INFORMATION_SCHEMA.Statistics
+WHERE TABLE_SCHEMA = 'semi' 
+  AND TABLE_NAME = 'TourSpot'</queryString>
+				</query>
+				<query>
+					<queryString>ALTER TABLE TourSpot
+DROP INDEX fulltext_index_fti</queryString>
+				</query>
+				<query>
+					<queryString>SELECT * 
+FROM INFORMATION_SCHEMA.Statistics 
+WHERE TABLE_SCHEMA = 'semi' 
+  AND TABLE_NAME = 'TourSpot' 
+  AND INDEX_TYPE = 'FULLTEXT'</queryString>
+				</query>
+				<query>
+					<queryString>SELECT * 
+FROM INFORMATION_SCHEMA.Statistics
+WHERE TABLE_SCHEMA = 'semi' 
+  AND TABLE_NAME = 'TourSpot' 
+  AND INDEX_type = 'FULLTEXT'</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+	</bookmarks>
+</SAVED_DATA>
