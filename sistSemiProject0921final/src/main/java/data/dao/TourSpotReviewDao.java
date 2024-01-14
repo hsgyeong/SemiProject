@@ -22,7 +22,7 @@ public class TourSpotReviewDao {
       Connection conn=db.getConnection();
       PreparedStatement pstmt=null;
 
-      String sql="insert into TourReview values(null,?,?,?,?,now(),?,0,?,?)";
+      String sql="insert into TourReview values(null,?,?,?,?,now(),0,0,?,?)";
 
 
       try {
@@ -32,9 +32,8 @@ public class TourSpotReviewDao {
          pstmt.setString(2, dto.getId());
          pstmt.setString(3, dto.getPhoto());
          pstmt.setString(4, dto.getTitle());
-         pstmt.setString(5, dto.getViewcount());
-         pstmt.setString(6, dto.getContent());
-         pstmt.setString(7, dto.getStars());
+         pstmt.setString(5, dto.getContent());
+         pstmt.setString(6, dto.getStars());
          
 
          pstmt.execute();

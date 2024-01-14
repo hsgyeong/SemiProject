@@ -28,12 +28,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script>
-$(function(){
-$("span.likes").click(function() {
+$(document).ready(function(){
+	
+	$(".like-btn").click(function() {
       
-      var num=$(this).attr("num");
-      //alert(num);
+      var num=$(this).attr("com_seq");
+
       var tag=$(this);
+      
+      var $spanLikes = $(this).find(".bi-hand-thumbs-up");
+	  var $likesCount = $(this).find(".likescount");
       
       $.ajax({
          
@@ -43,14 +47,28 @@ $("span.likes").click(function() {
          data:{"num":num},
          success:function(data){
             
-            //alert(data.likes);
-            tag.next().text(data.likes);
-          
-            }
-            
-            
-         });
-      });
+		 console.log(data);
+				
+	     updateLikes($spanLikes, $likesCount, data.likes);
+		},
+			error: function(xhr, status, error) {
+				console.error("request faild: ", status, error);
+				console.error(xhr.responseText);
+			}
+		}) 
+			
+	})
+	
+})
+
+function updateLikes($element, $likesCount, newLikes)
+{
+	$likesCount.text(newLikes);	
+	console.log("업데이트된 like"+ newLikes);
+}
+
+$(function(){
+
 $("span.answer:eq(0)").click(function() {
     
     // $(this).prev().toggle();
@@ -74,20 +92,10 @@ $("span.answer:eq(2)").click(function() {
   });
   
   $("span.answer").click();
+  
   });
 
-   
-   /* function showStars(sv,seq){
-      for(var i=1;i<sv;i++){
-         $("#n"+seq+" i.star"+i+"0").attr("class","bi bi-star-fill star"+i+"0");
-      }
-      if(sv*2%2==0){
-         $("#n"+seq+" i.star"+sv+"0").attr("class","bi bi-star-fill star"+sv+"0");
-      }
-      else{
-         $("#n"+seq+" i.star"+(sv+0.5)+"0").attr("class","bi bi-star-half star"+sv+"0");
-      }
-   } */
+    
    function showStars(sv){
       var s="";
       var empty="<i class='bi bi-star'>";
@@ -157,6 +165,7 @@ div.table+* {
    i{
       color: orange;
   }
+
   </style>
 </head>
 <%
@@ -266,7 +275,8 @@ List<GuestReviewDto> guestreviewlist = dao.getPagingList(startNum, perPage);
                   <td>
                      <div float="right;">
                         <span class="likes"><a style="font-size: 0.7em; color: gray;">좋아요</a>&nbsp;
-                        <i class="bi bi-hand-thumbs-up" style="color: gray;"></i>&nbsp;&nbsp;&nbsp;<%=guestreviewdto.getLikes()%></span>
+                        <i class="bi bi-hand-thumbs-up like-btn" style="color: gray;"></i>&nbsp;&nbsp;&nbsp;
+                        <span class="likescount"><%=guestreviewdto.getLikes()%></span></span>
                         <a style="font-size: 0.7em; color: gray;">작성일&nbsp;<%=sdf.format(guestreviewdto.getWriteday())%></a>&nbsp;&nbsp;
                         <a style="font-size: 0.7em; color: gray;">조회수&nbsp;<%=guestreviewdto.getViewcount()%></a>
                      </div>
@@ -274,14 +284,18 @@ List<GuestReviewDto> guestreviewlist = dao.getPagingList(startNum, perPage);
                </div>
 
                <br>
+            <div style="width:800px; margin-left:20px;">  
             <tr class="photo">
             <td><%=guestreviewdto.getPhoto()%></td>
-         </tr>
-         <br>
-         <td>내용&nbsp;&nbsp;<%=guestreviewdto.getContent()%></td> 
-         <br> 
-         <br>
-         <br>
+         	</tr>
+         	<br>
+        	 <tr>
+        	 <td><%=guestreviewdto.getContent()%></td>
+         	</tr>
+         	</div> 
+        	 <br> 
+        	 <br>
+        	 <br>
       </div>
       <%      
                //각 방명록에 달린 댓글 목록 가져오기
@@ -296,17 +310,24 @@ List<GuestReviewDto> guestreviewlist = dao.getPagingList(startNum, perPage);
       <form action="tourReview/guestCommentInsert.jsp" method="post">
       
          <div class="d-flex">
-         <input type="text" name="writer" class="form-control">
-         <input type="password" name="pass" class="form-control">
-            <textarea style="width: 1000px; height: 120px; margin-right: 50px;"
+         <dlv>
+         <input type="text" name="writer" class="form-control" placeholder="닉네임"><br>
+         <input type="password" name="pass" class="form-control" placeholder="비밀번호">
+         </dlv>
+         <div class="d-inline-flex">
+         	<div>
+            <textarea style="width: 800px; height: 120px; margin-right: 50px;"
                name="content"  class="form-control"></textarea>
+            </div>
+            <div>
             <button type="submit" class="btn btn-outline-dark"
                style="width: 100px; height: 100px; margin-bottom: 40px;">등록</button>
-   
+  			</div>
          </div>
          <input type="hidden" name="com_seq"   value="<%=guestreviewdto.getCom_seq()%>"> 
          
          <input type="hidden" name="currentPage" value="<%=currentPage%>">
+         </div>
          </form>
          </td>
          </tr>
@@ -337,7 +358,6 @@ List<GuestReviewDto> guestreviewlist = dao.getPagingList(startNum, perPage);
                      <td>
                      <i class="bi bi-person-circle"></i>
 
-                     
                      <b><%=g.getWriter() %></b>
                      &nbsp;
                      

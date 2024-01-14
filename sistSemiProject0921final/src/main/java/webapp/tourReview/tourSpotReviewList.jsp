@@ -97,11 +97,12 @@ TourReviewDto dto = new TourReviewDto();
 %>
 $(document).ready(function(){
 	
-	$("span.likes").click(function(){
+	$(".like-btn").click(function(){
 		
-		var num = $(this).attr("num");
-		// alert(num); 
-		var $spanLikes = $(this);
+		var num = $(this).attr("com_seq");
+		//alert(num); 
+		var $spanLikes = $(this).find(".bi-hand-thumbs-up");
+		var $likesCount = $(this).find(".likescount");
 		
 		$.ajax({
 			
@@ -110,17 +111,26 @@ $(document).ready(function(){
 			url:"tourReview/likes.jsp",
 			data:{"num":num},
 			success:function(data){
-				//alert(data.chu);
-				var likes = data.likes;
-				//alert(likes);
-				$spanLikes.find(".bi-hand-thumbs-up").next().text(likes);
+			
+				console.log(data);
+				
+				updateLikes($spanLikes, $likesCount, data.likes);
+			},
+			error: function(xhr, status, error) {
+				console.error("request faild: ", status, error);
+				console.error(xhr.responseText);
 			}
-		})
+		}) 
 			
 	})
 	
 })
 
+function updateLikes($element, $likesCount, newLikes)
+{
+	$likesCount.text(newLikes);	
+	console.log("업데이트된 like"+ newLikes);
+}
 </script>
 </head>
 <%
@@ -268,11 +278,12 @@ if (list.size() == 0 && currentPage != 1) {
                       <%}%>
                               <span class="likes">
                               <a style="font-size: 0.7em; color: gray;">좋아요</a>&nbsp;
-                              <i class="bi bi-hand-thumbs-up" style="color: gray;" name="likes" id="like" com_seq=<%=dto.getCom_seq()%>></i>
+                              <i class="bi bi-hand-thumbs-up like-btn" style="color: gray; cursor:pointer;" name="likes" id="likes" 
+                              com_seq=<%=tourreviewdto.getCom_seq()%>>
                               &nbsp;
-                              <%=tourreviewdto.getLikes()%></span>
-                              <a style="font-size: 0.7em; color: gray;">작성일&nbsp;&nbsp;<%=sdf.format(tourreviewdto.getWriteday())%></a>&nbsp;&nbsp;
-                              <a style="font-size: 0.7em; color: gray;">조회수&nbsp;&nbsp;<%=tourreviewdto.getViewcount()%></a>
+                              <span class="likescount"><%=tourreviewdto.getLikes()%></span></i></span>
+                              <a style="font-size: 0.8em; color: gray;">작성일&nbsp;&nbsp;<%=sdf.format(tourreviewdto.getWriteday())%></a>&nbsp;&nbsp;
+                              <a style="font-size: 0.8em; color: gray;">조회수&nbsp;&nbsp;<%=tourreviewdto.getViewcount()%></a>
                            </div>
                         </td>
                      </div>
@@ -280,8 +291,8 @@ if (list.size() == 0 && currentPage != 1) {
                      <br>
                         <tr class="photo">
                         <td><%=tourreviewdto.getPhoto()%></td>
-                        </tr>
-                     <br>
+                    </tr>
+                         <br>
                      <td><%=tourreviewdto.getContent()%></td> <br> <br>
                      <br>
                      </div>
@@ -299,7 +310,7 @@ if (list.size() == 0 && currentPage != 1) {
 <%
 if(loginok!=null){
 %>
-               <div class="commentform" style="margin-left: 180px">
+               <div class="commentform" style="margin-left: 200px">
                   <form action="tourReview/memberCommentInsert.jsp" method="post">
                      <table class="table table-bordered" style="width:1000px;" id="id<%=com_seq%>">
                         <tr>
@@ -307,8 +318,8 @@ if(loginok!=null){
                                  name="content" required="required" class="form-control"></textarea>
                            </td>
                            <td>
-                              <button type="submit" class="btn btn-outline-dark" style="width: 100px;height: 100px">등록</button> <input
-                              type="hidden" name="com_seq" value="<%=tourreviewdto.getCom_seq() %>">
+                              <button type="submit" class="btn btn-outline-dark" style="width: 100px;height: 100px">등록</button> 
+                              <input type="hidden" name="com_seq" value="<%=tourreviewdto.getCom_seq() %>">
                               <input type="hidden" name="id" value="<%=myid %>">
                               <input type="hidden" name="currentPage" value="<%=currentPage %>">
                            </td>
@@ -350,8 +361,8 @@ if(loginok!=null){
                      
                      //작성자명
                      String name = memberDao.getName(myid);
-                     System.out.println(myid);
-                     System.out.println(name);
+                     //System.out.println(myid);
+                     //System.out.println(name);
                      %>
                      
                      <b><%=memberDao.getName(m.getId())  %></b>

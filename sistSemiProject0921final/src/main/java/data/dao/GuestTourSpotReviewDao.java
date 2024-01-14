@@ -23,16 +23,16 @@ public class GuestTourSpotReviewDao {
       Connection conn=db.getConnection();
       PreparedStatement pstmt=null;
       
-      String sql="insert into GuestReview values(null,?,?,?,?,?,now(),?,NULL,?,?)";
+      String sql="insert into GuestReview values(null,?,?,?,?,?,now(),0,0,?,?)";
       
       try {
          pstmt=conn.prepareStatement(sql);
+         
          pstmt.setString(1, dto.getTour_seq());
          pstmt.setString(2, dto.getNickname());
          pstmt.setString(3, dto.getPass());
          pstmt.setString(4, dto.getPhoto());
          pstmt.setString(5, dto.getTitle());
-         pstmt.setString(6,dto.getViewcount());
          pstmt.setString(7, dto.getContent());
          pstmt.setString(8, dto.getStars());
          
@@ -308,13 +308,14 @@ public class GuestTourSpotReviewDao {
       Connection conn=db.getConnection();
       PreparedStatement pstmt=null;
       
-      String sql="update GuestReview set title=?, photo=?, content=? where com_seq=?";
+      String sql="update GuestReview set title=?,content=?, stars=? where com_seq=?";
       
       try {
          pstmt=conn.prepareStatement(sql);
+         
          pstmt.setString(1, dto.getTitle());
-         pstmt.setString(2, dto.getPhoto());
-         pstmt.setString(3, dto.getContent());
+         pstmt.setString(2, dto.getContent());
+         pstmt.setString(3, dto.getStars());
          pstmt.execute();
       } catch (SQLException e) {
          // TODO Auto-generated catch block
