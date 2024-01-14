@@ -176,7 +176,8 @@ https://github.com/RheeMingyu/SemiSemi/assets/108057548/639ad984-26dc-4c46-a34a-
 https://github.com/RheeMingyu/SemiSemi/assets/108057548/16e394e0-c38f-4c31-86c2-72c661883364
 
 ### 리뷰페이지(홍성경)
-https://github.com/RheeMingyu/SemiSemi/assets/108057548/96829d61-7d89-4385-872b-9e180e2ea26e
+![리뷰페이지](https://github.com/hsgyeong/SemiProject/assets/115066507/805bb06f-bd32-41b2-bf68-f6a095cac570)
+
 
 ### 마이페이지(진현규)
 https://github.com/RheeMingyu/SemiSemi/assets/108057548/d436f5da-c646-4efc-b18e-3b42c8e40aaa
